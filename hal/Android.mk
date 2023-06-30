@@ -56,7 +56,8 @@ LOCAL_C_INCLUDES += \
     vendor/qcom/opensource/core-utils/fwk-detect \
     $(call project-path-for,qcom-audio)/pal \
     $(call include-path-for, audio-effects) \
-    $(LOCAL_PATH)/audio_extn
+    $(LOCAL_PATH)/audio_extn \
+    $(call project-path-for,qcom-audio)/pal/ipc/HwBinders/pal_ipc_server/inc/
 
 LOCAL_SRC_FILES := \
     AudioStream.cpp \
@@ -99,7 +100,8 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_AGM_HIDL)),true)
 
   LOCAL_CFLAGS += -DAGM_HIDL_ENABLED
   LOCAL_C_INCLUDES += \
-    $(call project-path-for,qcom-audio)/agm/ipc/HwBinders/agm_ipc_client/
+    $(call project-path-for,qcom-audio)/agm/ipc/HwBinders/agm_ipc_client/ \
+    $(call project-path-for,qcom-audio)/agm/ipc/HwBinders/agm_ipc_service/inc/
 
   LOCAL_HEADER_LIBRARIES += \
     libagm_headers
