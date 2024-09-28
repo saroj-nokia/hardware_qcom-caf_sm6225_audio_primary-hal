@@ -1,5 +1,5 @@
 cc_binary {
-    name: "audioadsprpcd",
+    name: "audioadsprpcd_sm6225", // Renamed to avoid conflict
 
     srcs: ["adsprpcd.c"],
 
